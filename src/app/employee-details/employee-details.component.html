@@ -1,0 +1,30 @@
+<app-employee-details-form></app-employee-details-form>
+
+<table class="table table-striped mt-2">
+    <thead class="thead-light">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>EnrollNo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pd of service.list">
+         
+            <td>{{pd.firstName}}</td>
+            <td>{{pd.lastName}}</td>
+            <td>{{pd.enrollNo}}</td>
+            
+         
+            <td>
+              <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.id)" ></i>
+            </td>
+            <td>
+                <a data-bs-toggle="collapse" href="#collapseExample" aria-controls="collapseExample"> <i class="fa fa-edit mr-2" aria-hidden="true" (click)="populateForm(pd)"></i></a>  
+                
+            </td>
+           
+
+        </tr>
+    </tbody>
+</table>
